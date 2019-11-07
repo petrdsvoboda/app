@@ -1,0 +1,31 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+		"plugin:react/recommended"
+	],
+	"env": {
+		"node": true,
+		"jest": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 11,
+		"sourceType": "module"
+	},
+	"ecmaFeatures": { "jsx": true },
+	"plugins": ["@typescript-eslint/eslint-plugin", "react", "react-hooks"],
+	"rules": {
+		"no-dupe-class-members": "off",
+		"semi": "off",
+		"@typescript-eslint/member-delimiter-style": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"react/prop-types": "off",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn"
+	},
+	"settings": {
+		"react": { "version": "detect" }
+	}
+}
