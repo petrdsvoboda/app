@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { ListProps as MUIListProps } from '@material-ui/core/List';
 interface Props<T> {
-    data: T[];
-    itemRenderer: (item: T) => React.FC;
+    data: T[] | null | undefined;
+    itemRenderer: (item: T) => React.FunctionComponentElement<any>;
     ListProps?: MUIListProps;
     isFetching?: boolean;
     fallbackText?: string;

@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 interface Props<T> {
-	data: T[]
-	itemRenderer: (item: T) => React.FC
+	data: T[] | null | undefined
+	itemRenderer: (item: T) => React.FunctionComponentElement<any>
 	ListProps?: MUIListProps
 	isFetching?: boolean
 	fallbackText?: string
@@ -34,7 +34,7 @@ const List = <T extends {}>(props: Props<T>): React.FunctionComponentElement<Pro
 		return <CircularProgress className={classes.placeholder} />
 	}
 
-	if ((!data || data.length === 0) && !isFetching) {
+	if (data === null || data === undefined || (data.length === 0 && !isFetching)) {
 		return (
 			<Typography color="textSecondary" className={classes.placeholder}>
 				{fallbackText ? fallbackText : 'No data found'}
